@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobiles</title>
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+      media="screen"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"
+    ></script>
+
+    <style>
+      .menu-bar ul li a:hover {
+        color: red;
+        text-decoration: underline;
+      }
+
+      .search-box span i:hover {
+        color: red;
+      }
+      .side-menu ul li a:hover {
+        color: red;
+        text-decoration: underline;
+      }
+      body {
+        background: rgba(253, 243, 223, 0.8);
+      }
+      .footer .col-md-3 {
+        margin-left: 70px;
+      }
+
+      a:link {
+        color: #cc8500;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #cc1400;
+        text-decoration: underline;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: normal;
+        font-size: 100%;
+      }
+
+      #site {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 1em;
+      }
+
+      #masthead {
+        margin-top: 3em;
+        padding: 2em 0 0.5em 0;
+        border-bottom: 1px solid #ddd;
+      }
+
+      #masthead h1 {
+        margin: 0;
+        font-size: 3.5em;
+        overflow: hidden;
+        padding-left: 85px;
+        min-height: 82px;
+        line-height: 2.3;
+        background: url(../images/logo.png) no-repeat 0 50%;
+        color: #900;
+      }
+
+      .tagline {
+        float: right;
+        color: #666;
+        font-size: 14px;
+        padding-top: 3.5em;
+      }
+
+      #products ul {
+        margin: 1.5em 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+      }
+
+      #products li {
+        float: left;
+        width: 31%;
+        margin: 0 1%;
+        display: block;
+      }
+      /*=============================================On=Sale==============================================*/
+      .product-image img {
+        background-color: orange;
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        padding: 3px;
+        margin-bottom: 5px;
+      }
+      .on-sale {
+        width: 705px;
+        margin: 20px;
+        padding: 20px;
+      }
+      .title-box {
+        margin-left: 80px;
+        background: orange;
+        color: #fff;
+        width: 180px;
+        padding: 4px 10px;
+        height: 40px;
+        margin-bottom: 30px;
+        display: flex;
+      }
+
+      .title-box {
+        background: orange;
+        color: #fff;
+        width: 180px;
+        padding: 4px 10px;
+        height: 40px;
+        margin-bottom: 30px;
+        display: flex;
+        margin-left: -100px;
+      }
+      .title-box h2 {
+        font-size: 24px;
+      }
+      .title-box::after {
+        content: "";
+        border-top: 40px solid orange;
+        border-right: 50px solid transparent;
+        position: absolute;
+        display: flex;
+        margin-top: -4px;
+        margin-left: 170px;
+      }
+
+      .fa-star,
+      .fa-star-half-o {
+        color: goldenrod;
+      }
+      .product-price {
+        text-align: center;
+        font-size: large;
+        font-weight: bold;
+      }
+      .pname {
+        text-align: center;
+        font-size: large;
+        font-weight: bold;
+      }
+      ul {
+        margin-bottom: 10px;
+      }
+      form.add-to-cart div,
+      form.add-to-cart p {
+        text-align: center;
+      }
+
+      form input.qty {
+        width: 40px;
+        border: 1px solid #eee;
+        font: 1.3em "PT Serif", serif;
+        background: #f9f9f9;
+        color: #000;
+        border-radius: 3px;
+        margin-left: 0.4em;
+      }
+
+      .btn,
+      a.btn {
+        display: inline-block;
+        background: #cc1400;
+        color: #fff;
+        font: 1em "PT Serif", serif;
+        padding: 0.3em 2em;
+        text-align: center;
+        border-radius: 4px;
+        border: 1px solid #a00;
+      }
+
+      #site-info {
+        height: 3em;
+        width: 100%;
+        line-height: 3;
+        text-align: center;
+        background: #cc8500;
+        position: absolute;
+        color: #fff;
+        left: 0;
+        bottom: 0;
+      }
+
+      body#checkout-page #site-info {
+        position: static;
+      }
+
+      #shopping-cart {
+        margin: 1.5em 0;
+      }
+
+      .shopping-cart {
+        border: 1px solid #ddd;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        table-layout: fixed;
+      }
+
+      .shopping-cart th {
+        font-size: 1.3em;
+        padding: 0.3em;
+        width: 33.3%;
+        border: 1px solid #ddd;
+        text-transform: uppercase;
+      }
+
+      .shopping-cart td {
+        padding: 0.3em;
+        width: 33.3%;
+        border: 1px solid #ddd;
+      }
+
+      .shopping-cart tr:nth-child(even) {
+        background: #fafafa;
+      }
+
+      .shopping-cart td.pdelete {
+        text-align: center;
+      }
+
+      .pdelete a,
+      .pdelete a:hover {
+        color: #c00;
+        text-decoration: none;
+        font-size: 2.5em;
+        display: block;
+        text-align: center;
+      }
+
+      #shopping-cart-actions {
+        margin: 1.5em 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+      }
+
+      #shopping-cart-actions li {
+        display: inline-block;
+        margin-right: 1em;
+      }
+
+      #pricing {
+        padding: 0.5em;
+        margin: 1em 0;
+        background: #fafafa;
+      }
+
+      #sub-total,
+      #shipping {
+        margin: 1.5em 0;
+        text-align: right;
+      }
+
+      #sub-total span,
+      #shipping span {
+        margin-left: 1em;
+      }
+
+      #content > h1,
+      #checkout-order-form h2 {
+        font-size: 2em;
+        text-align: center;
+      }
+
+      #pricing #sub-total,
+      #pricing #shipping {
+        margin: 1em 0;
+      }
+
+      #checkout-order-form {
+        margin: 1.5em 0;
+      }
+
+      #checkout-order-form fieldset {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 1em;
+        margin-bottom: 1.3em;
+      }
+
+      #checkout-order-form legend {
+        padding: 0.3em;
+        background: #fafafa;
+        font-weight: bold;
+      }
+
+      #checkout-order-form div {
+        margin-bottom: 1em;
+      }
+
+      #checkout-order-form label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.3em;
+        text-align: left;
+      }
+
+      #checkout-order-form input[type="text"] {
+        width: 200px;
+        display: block;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0.3em;
+      }
+
+      #checkout-order-form select {
+        width: 200px;
+        display: block;
+      }
+
+      .message {
+        display: block;
+        margin: 0.5em 0;
+        color: red;
+      }
+
+      #user-details {
+        margin: 1.5em 0;
+      }
+
+      #user-details > h2 {
+        text-align: center;
+        font-size: 2em;
+      }
+
+      #user-details-content {
+        margin: 1.5em 0;
+        padding: 1em;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      #user-details-content .detail {
+        float: left;
+        width: 46%;
+      }
+
+      #user-details-content .detail.right {
+        float: right;
+      }
+
+      #user-details-content .detail > h2 {
+        text-align: center;
+        font-size: 1.6em;
+        margin-bottom: 0.5em;
+      }
+
+      #user-details-content ul {
+        margin: 0 0 1em 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      #user-details-content li {
+        display: block;
+        margin-bottom: 0.5em;
+        padding-bottom: 0.3em;
+        border-bottom: 1px solid #ddd;
+      }
+
+      #paypal-form {
+        margin: 1.5em 0;
+      }
+      .side-menu ul li a {
+        color: orange;
+        text-shadow: rgb(0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-nav-bar">
+      <div class="search-box">
+        <i class="fa fa-bars" id="menu-btn" onclick="openmenu()"></i>
+        <i class="fa fa-times" id="close-btn" onclick="closemenu()"></i>
+        <img src="photos/images.png" class="logo" />
+
+        <input type="text" class="form-control" placeholder="Search Items" />
+        <span class="input-group-text"> <i class="fa fa-search"></i></span>
+      </div>
+      <div class="menu-bar">
+        <ul>
+          <li>
+            <a href="#"
+              ><i class="fa fa-shopping-basket"></i
+              ><a href="cart.html">Cart</a></a
+            >
+          </li>
+          <li><a href="register.html">Sign Up</a></li>
+          <li><a href="login.html">Log In</a></li>
+        </ul>
+      </div>
+    </div>
+    <!---------------------------------------------------Header-------------------------------------->
+    <section class="header">
+      <div class="side-menu" id="side-menu">
+        <ul>
+          <li><a href="index.html">On Sale</a></li>
+
+          <li>
+            <a href="men.html">MensWear</a><i class="fa fa-angle-right"></i>
+            <ul>
+              <li><a href="men1.html">Shirts</a></li>
+              <li><a href="men2.html">Pants</a></li>
+              <li><a href="men3.html">Watches</a></li>
+              <li><a href="men4.html">Shoes</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="Mobile.html">Mobile</a>
+            <i class="fa fa-angle-right"></i>
+            <ul>
+              <li><a href="mbl1.html">Mobiles</a></li>
+              <li><a href="mbl2.html">Mobile Covers</a></li>
+              <li><a href="mbl3.html">Hands Free</a></li>
+              <li><a href="mbl4.html">Charger</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="Computer.html">Computer</a
+            ><i class="fa fa-angle-right"></i>
+            <ul>
+              <li><a href="comp4.html">Desktop</a></li>
+              <li><a href="comp3.html">Mouse</a></li>
+              <li><a href="comp2.html">KeyBoard</a></li>
+              <li><a href="comp1.html">Headphones</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-----------------------------------On-Sale---------------------------------->
+    <div id="site">
+      <div id="content">
+        <div id="products">
+          <div class="title-box">
+            <h2>Mobiles</h2>
+          </div>
+          <ul>
+            <!--------------------------Item-1---------------------------------->
+
+            <li>
+              <div class="product-image">
+                <img
+                  src="mobiles/mobl/31eAeTNWtOL._AC_US160_FMwebp_QL70_.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                class="product-description"
+                data-name="OnePlus 7T Pro"
+                data-price="15000"
+              >
+                <h3 class="product-name"></h3>
+                <p class="product-price">&euro; 15000</p>
+                <form class="add-to-cart" action="cart.html" method="post">
+                  <div>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i><br />
+                    <h4 class="pname">OnePlus 7T Pro</h4>
+
+                    <label for="qty-1">Quantity</label>
+                    <input
+                      type="text"
+                      name="qty-1"
+                      id="qty-1"
+                      class="qty"
+                      value="1"
+                    />
+                  </div>
+                  <p><input type="submit" value="Add to cart" class="btn" /></p>
+                </form>
+              </div>
+            </li>
+            <!--------------------------Item-1-End--------------------------------->
+
+            <!-----------------------------Item-2---------------------------------->
+            <li>
+              <div class="product-image">
+                <img
+                  src="mobiles/mobl/31kLWvXbGrL._AC_US160_FMwebp_QL70_ (1).webp"
+                  alt=""
+                />
+              </div>
+              <div
+                class="product-description"
+                data-name="Vivo U20"
+                data-price="11000"
+              >
+                <h3 class="product-name"></h3>
+                <p class="product-price">&euro; 11000</p>
+                <form class="add-to-cart" action="cart.html" method="post">
+                  <div>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i><br />
+                    <h4 class="pname">Vivo U20</h4>
+
+                    <label for="qty-1">Quantity</label>
+                    <input
+                      type="text"
+                      name="qty-1"
+                      id="qty-1"
+                      class="qty"
+                      value="1"
+                    />
+                  </div>
+                  <p><input type="submit" value="Add to cart" class="btn" /></p>
+                </form>
+              </div>
+            </li>
+            <!--------------------------Item-2-End--------------------------------->
+            <!-----------------------------Item-3---------------------------------->
+
+            <li>
+              <div class="product-image">
+                <img
+                  src="mobiles/mobl/31vCx3B-I6L._AC_US160_FMwebp_QL70_.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                class="product-description"
+                data-name="LG W30"
+                data-price="8000"
+              >
+                <h3 class="product-name"></h3>
+                <p class="product-price">&euro; 8000</p>
+                <form class="add-to-cart" action="cart.html" method="post">
+                  <div>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i><br />
+                    <h4 class="pname">LG W30</h4>
+
+                    <label for="qty-1">Quantity</label>
+                    <input
+                      type="text"
+                      name="qty-1"
+                      id="qty-1"
+                      class="qty"
+                      value="1"
+                    />
+                  </div>
+                  <p><input type="submit" value="Add to cart" class="btn" /></p>
+                </form>
+              </div>
+            </li>
+
+            <!--------------------------Item-3-End--------------------------------->
+            <!-----------------------------Item-4---------------------------------->
+
+            <li>
+              <div class="product-image">
+                <img
+                  src="mobiles/mobl/41aQQe4bqLL._AC_US160_FMwebp_QL70_.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                class="product-description"
+                data-name="Huawei P30"
+                data-price="19000"
+              >
+                <h3 class="product-name"></h3>
+                <p class="product-price">&euro; 19000</p>
+                <form class="add-to-cart" action="cart.html" method="post">
+                  <div>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i><br />
+                    <h4 class="pname">Huawei P30</h4>
+
+                    <label for="qty-1">Quantity</label>
+                    <input
+                      type="text"
+                      name="qty-1"
+                      id="qty-1"
+                      class="qty"
+                      value="1"
+                    />
+                  </div>
+                  <p><input type="submit" value="Add to cart" class="btn" /></p>
+                </form>
+              </div>
+            </li>
+
+            <!--------------------------Item-4-End--------------------------------->
+            <!-----------------------------Item-5---------------------------------->
+
+            <li>
+              <div class="product-image">
+                <img
+                  src="mobiles/mobl/41rmjyCVx0L._AC_US160_FMwebp_QL70_.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                class="product-description"
+                data-name="OnePlus 7T"
+                data-price="20000"
+              >
+                <h3 class="product-name"></h3>
+                <p class="product-price">&euro; 20000</p>
+                <form class="add-to-cart" action="cart.html" method="post">
+                  <div>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i><br />
+                    <h4 class="pname">OnePlus 7T</h4>
+
+                    <label for="qty-1">Quantity</label>
+                    <input
+                      type="text"
+                      name="qty-1"
+                      id="qty-1"
+                      class="qty"
+                      value="1"
+                    />
+                  </div>
+                  <p><input type="submit" value="Add to cart" class="btn" /></p>
+                </form>
+              </div>
+            </li>
+
+            <!--------------------------Item-5-End--------------------------------->
+            <!-----------------------------Item-6---------------------------------->
+
+            <li>
+              <div class="product-image">
+                <img
+                  src="mobiles/mobl/41N8ADm0T-L._AC_US160_FMwebp_QL70_.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                class="product-description"
+                data-name="Samsung Galaxy M40"
+                data-price="20000"
+              >
+                <h3 class="product-name"></h3>
+                <p class="product-price">&euro; 20000</p>
+                <form class="add-to-cart" action="cart.html" method="post">
+                  <div>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i><br />
+                    <h4 class="pname">Samsung Galaxy M40</h4>
+
+                    <label for="qty-1">Quantity</label>
+                    <input
+                      type="text"
+                      name="qty-1"
+                      id="qty-1"
+                      class="qty"
+                      value="1"
+                    />
+                  </div>
+                  <p><input type="submit" value="Add to cart" class="btn" /></p>
+                </form>
+              </div>
+            </li>
+
+            <!--------------------------Item-6-End--------------------------------->
+          </ul>
+          <ul>
+            <!--------------------------Item-1---------------------------------->
+
+            <li>
+              <div class="product-image">
+                <img
+                  src="mobiles/mobl/41On5Oa+6lL._AC_US160_FMwebp_QL70_.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                class="product-description"
+                data-name="Xiaomi Mi A3"
+                data-price="11000"
+              >
+                <h3 class="product-name"></h3>
+                <p class="product-price">&euro; 11000</p>
+                <form class="add-to-cart" action="cart.html" method="post">
+                  <div>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i><br />
+                    <h4 class="pname">Xiaomi Mi A3</h4>
+
+                    <label for="qty-1">Quantity</label>
+                    <input
+                      type="text"
+                      name="qty-1"
+                      id="qty-1"
+                      class="qty"
+                      value="1"
+                    />
+                  </div>
+                  <p><input type="submit" value="Add to cart" class="btn" /></p>
+                </form>
+              </div>
+            </li>
+            <!--------------------------Item-1-End--------------------------------->
+
+            <!-----------------------------Item-2---------------------------------->
+            <li>
+              <div class="product-image">
+                <img
+                  src="mobiles/mobl/41va4EQ3PML._AC_US160_FMwebp_QL70_.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                class="product-description"
+                data-name="Samsung Galaxy M30s"
+                data-price="12000"
+              >
+                <h3 class="product-name"></h3>
+                <p class="product-price">&euro; 12000</p>
+                <form class="add-to-cart" action="cart.html" method="post">
+                  <div>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i><br />
+                    <h4 class="pname">Samsung Galaxy M30s</h4>
+
+                    <label for="qty-1">Quantity</label>
+                    <input
+                      type="text"
+                      name="qty-1"
+                      id="qty-1"
+                      class="qty"
+                      value="1"
+                    />
+                  </div>
+                  <p><input type="submit" value="Add to cart" class="btn" /></p>
+                </form>
+              </div>
+            </li>
+            <!--------------------------Item-2-End--------------------------------->
+            <!-----------------------------Item-3---------------------------------->
+
+            <li>
+              <div class="product-image">
+                <img
+                  src="mobiles/mobl/51GPgniBifL._AC_US160_FMwebp_QL70_.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                class="product-description"
+                data-name="Huawei P30 Lite"
+                data-price="14000"
+              >
+                <h3 class="product-name"></h3>
+                <p class="product-price">&euro; 14000</p>
+                <form class="add-to-cart" action="cart.html" method="post">
+                  <div>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i><br />
+                    <h4 class="pname">Huawei P30 Lite</h4>
+
+                    <label for="qty-1">Quantity</label>
+                    <input
+                      type="text"
+                      name="qty-1"
+                      id="qty-1"
+                      class="qty"
+                      value="1"
+                    />
+                  </div>
+                  <p><input type="submit" value="Add to cart" class="btn" /></p>
+                </form>
+              </div>
+            </li>
+
+            <!--------------------------Item-3-End--------------------------------->
+            <!-----------------------------Item-4---------------------------------->
+
+            <li>
+              <div class="product-image">
+                <img
+                  src="mobiles/mobl/414U96WCOEL._AC_US160_FMwebp_QL70_.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                class="product-description"
+                data-name="Samsung Galaxy M30"
+                data-price="16000"
+              >
+                <h3 class="product-name"></h3>
+                <p class="product-price">&euro; 16000</p>
+                <form class="add-to-cart" action="cart.html" method="post">
+                  <div>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i><br />
+                    <h4 class="pname">Samsung Galaxy M30</h4>
+
+                    <label for="qty-1">Quantity</label>
+                    <input
+                      type="text"
+                      name="qty-1"
+                      id="qty-1"
+                      class="qty"
+                      value="1"
+                    />
+                  </div>
+                  <p><input type="submit" value="Add to cart" class="btn" /></p>
+                </form>
+              </div>
+            </li>
+
+            <!--------------------------Item-4-End--------------------------------->
+            <!-----------------------------Item-5---------------------------------->
+
+            <li>
+              <div class="product-image">
+                <img
+                  src="mobiles/mobl/415IOkCUtgL._AC_US160_FMwebp_QL70_.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                class="product-description"
+                data-name="Vivo U10"
+                data-price="9000"
+              >
+                <h3 class="product-name"></h3>
+                <p class="product-price">&euro; 9000</p>
+                <form class="add-to-cart" action="cart.html" method="post">
+                  <div>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i><br />
+                    <h4 class="pname">Vivo U10</h4>
+
+                    <label for="qty-1">Quantity</label>
+                    <input
+                      type="text"
+                      name="qty-1"
+                      id="qty-1"
+                      class="qty"
+                      value="1"
+                    />
+                  </div>
+                  <p><input type="submit" value="Add to cart" class="btn" /></p>
+                </form>
+              </div>
+            </li>
+
+            <!--------------------------Item-5-End--------------------------------->
+            <!-----------------------------Item-6---------------------------------->
+
+            <li>
+              <div class="product-image">
+                <img
+                  src="mobiles/mobl/41DSzpsP58L._AC_US160_FMwebp_QL70_.webp"
+                  alt=""
+                />
+              </div>
+              <div
+                class="product-description"
+                data-name="Nokia 6.2"
+                data-price="11000"
+              >
+                <h3 class="product-name"></h3>
+                <p class="product-price">&euro; 11000</p>
+                <form class="add-to-cart" action="cart.html" method="post">
+                  <div>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i><br />
+                    <h4 class="pname">Nokia 6.2</h4>
+
+                    <label for="qty-1">Quantity</label>
+                    <input
+                      type="text"
+                      name="qty-1"
+                      id="qty-1"
+                      class="qty"
+                      value="1"
+                    />
+                  </div>
+                  <p><input type="submit" value="Add to cart" class="btn" /></p>
+                </form>
+              </div>
+            </li>
+
+            <!--------------------------Item-6-End--------------------------------->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!----------------------------------------On-Sale-End---------------------------------------->
+    <!----------------------------------------Header-End----------------------------------------->
+
+    <!---------------------------------Website-Features------------------------------------------->
+    <section class="website-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 feature-box">
+            <img src="photos/original-logo.jfif" />
+            <div class="feature-text">
+              <p><b>100% Original items</b> are available at company</p>
+            </div>
+          </div>
+
+          <div class="col-md-3 feature-box">
+            <img src="photos/return.png" />
+            <div class="feature-text">
+              <p><b>Return within 30 days</b> of receiving your order</p>
+            </div>
+          </div>
+
+          <div class="col-md-3 feature-box">
+            <img src="photos/delivery.png" />
+            <div class="feature-text">
+              <p>
+                <b>Get free delivery for every</b> order on more than price.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-3 feature-box">
+            <img src="photos/pay.png" />
+            <div class="feature-text">
+              <p>
+                <b>Pay Online through multiple</b> option (card/Net banking)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---------------------------------Website Features-End----------------------------------------->
+
+    <!-----------------------------------Footer------------------------------------------------->
+    <section class="footer">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-3">
+            <h1>Useful Links</h1>
+            <p>Privacy Policy</p>
+            <p>Terms of Use</p>
+            <p>Return Policy</p>
+            <p>Discount Coupons</p>
+          </div>
+          <div class="col-md-3">
+            <h1>Company</h1>
+            <p>About Us</p>
+            <p>Contact Us</p>
+            <p>Career</p>
+            <p>Affiliate</p>
+          </div>
+          <div class="col-md-3">
+            <h1>Follow Us on</h1>
+            <p><i class="fa fa-facebook-official"></i>Fcebook</p>
+            <p><i class="fa fa-youtube-play"></i>Youtube</p>
+            <p><i class="fa fa-linkedin"></i>Linkedin</p>
+            <p><i class="fa fa-twitter"></i>Twitter</p>
+          </div>
+        </div>
+        <hr />
+        <p class="copyright">Made by Syed Haris Ali</p>
+      </div>
+    </section>
+  </body>
+
+  <script>
+    (function($) {
+      $.Shop = function(element) {
+        this.$element = $(element);
+        this.init();
+      };
+
+      $.Shop.prototype = {
+        init: function() {
+          // Properties
+
+          this.cartPrefix = "winery-"; // Prefix string to be prepended to the cart's name in the session storage
+          this.cartName = this.cartPrefix + "cart"; // Cart name in the session storage
+          this.shippingRates = this.cartPrefix + "shipping-rates"; // Shipping rates key in the session storage
+          this.total = this.cartPrefix + "total"; // Total key in the session storage
+          this.storage = sessionStorage; // shortcut to the sessionStorage object
+
+          this.$formAddToCart = this.$element.find("form.add-to-cart"); // Forms for adding items to the cart
+          this.$formCart = this.$element.find("#shopping-cart"); // Shopping cart form
+          this.$checkoutCart = this.$element.find("#checkout-cart"); // Checkout form cart
+          this.$checkoutOrderForm = this.$element.find("#checkout-order-form"); // Checkout user details form
+          this.$shipping = this.$element.find("#sshipping"); // Element that displays the shipping rates
+          this.$subTotal = this.$element.find("#stotal"); // Element that displays the subtotal charges
+          this.$shoppingCartActions = this.$element.find(
+            "#shopping-cart-actions"
+          ); // Cart actions links
+          this.$updateCartBtn = this.$shoppingCartActions.find("#update-cart"); // Update cart button
+          this.$emptyCartBtn = this.$shoppingCartActions.find("#empty-cart"); // Empty cart button
+          this.$userDetails = this.$element.find("#user-details-content"); // Element that displays the user information
+          this.$paypalForm = this.$element.find("#paypal-form"); // PayPal form
+
+          this.currency = "&euro;"; // HTML entity of the currency to be displayed in the layout
+          this.currencyString = "€"; // Currency symbol as textual string
+          this.paypalCurrency = "EUR"; // PayPal's currency code
+          this.paypalBusinessEmail = "yourbusiness@email.com"; // Your Business PayPal's account email address
+          this.paypalURL = "https://www.sandbox.paypal.com/cgi-bin/webscr"; // The URL of the PayPal's form
+
+          // Object containing patterns for form validation
+          this.requiredFields = {
+            expression: {
+              value: /^([\w-\.]+)@((?:[\w]+\.)+)([a-z]){2,4}$/
+            },
+
+            str: {
+              value: ""
+            }
+          };
+
+          // Method invocation
+
+          this.createCart();
+          this.handleAddToCartForm();
+          this.handleCheckoutOrderForm();
+          this.emptyCart();
+          this.updateCart();
+          this.displayCart();
+          this.deleteProduct();
+          this.displayUserDetails();
+          this.populatePayPalForm();
+        },
+
+        // Public methods
+
+        // Creates the cart keys in the session storage
+
+        createCart: function() {
+          if (this.storage.getItem(this.cartName) == null) {
+            var cart = {};
+            cart.items = [];
+
+            this.storage.setItem(this.cartName, this._toJSONString(cart));
+            this.storage.setItem(this.shippingRates, "0");
+            this.storage.setItem(this.total, "0");
+          }
+        },
+
+        // Appends the required hidden values to the PayPal's form before submitting
+
+        populatePayPalForm: function() {
+          var self = this;
+          if (self.$paypalForm.length) {
+            var $form = self.$paypalForm;
+            var cart = self._toJSONObject(self.storage.getItem(self.cartName));
+            var shipping = self.storage.getItem(self.shippingRates);
+            var numShipping = self._convertString(shipping);
+            var cartItems = cart.items;
+            var singShipping = Math.floor(numShipping / cartItems.length);
+
+            $form.attr("action", self.paypalURL);
+            $form.find("input[name='business']").val(self.paypalBusinessEmail);
+            $form.find("input[name='currency_code']").val(self.paypalCurrency);
+
+            for (var i = 0; i < cartItems.length; ++i) {
+              var cartItem = cartItems[i];
+              var n = i + 1;
+              var name = cartItem.product;
+              var price = cartItem.price;
+              var qty = cartItem.qty;
+
+              $("<div/>")
+                .html(
+                  "<input type='hidden' name='quantity_" +
+                    n +
+                    "' value='" +
+                    qty +
+                    "'/>"
+                )
+                .insertBefore("#paypal-btn");
+              $("<div/>")
+                .html(
+                  "<input type='hidden' name='item_name_" +
+                    n +
+                    "' value='" +
+                    name +
+                    "'/>"
+                )
+                .insertBefore("#paypal-btn");
+              $("<div/>")
+                .html(
+                  "<input type='hidden' name='item_number_" +
+                    n +
+                    "' value='SKU " +
+                    name +
+                    "'/>"
+                )
+                .insertBefore("#paypal-btn");
+              $("<div/>")
+                .html(
+                  "<input type='hidden' name='amount_" +
+                    n +
+                    "' value='" +
+                    self._formatNumber(price, 2) +
+                    "'/>"
+                )
+                .insertBefore("#paypal-btn");
+              $("<div/>")
+                .html(
+                  "<input type='hidden' name='shipping_" +
+                    n +
+                    "' value='" +
+                    self._formatNumber(singShipping, 2) +
+                    "'/>"
+                )
+                .insertBefore("#paypal-btn");
+            }
+          }
+        },
+
+        // Displays the user's information
+
+        displayUserDetails: function() {
+          if (this.$userDetails.length) {
+            if (this.storage.getItem("shipping-name") == null) {
+              var name = this.storage.getItem("billing-name");
+              var email = this.storage.getItem("billing-email");
+              var city = this.storage.getItem("billing-city");
+              var address = this.storage.getItem("billing-address");
+              var zip = this.storage.getItem("billing-zip");
+              var country = this.storage.getItem("billing-country");
+
+              var html = "<div class='detail'>";
+              html += "<h2>Billing and Shipping</h2>";
+              html += "<ul>";
+              html += "<li>" + name + "</li>";
+              html += "<li>" + email + "</li>";
+              html += "<li>" + city + "</li>";
+              html += "<li>" + address + "</li>";
+              html += "<li>" + zip + "</li>";
+              html += "<li>" + country + "</li>";
+              html += "</ul></div>";
+
+              this.$userDetails[0].innerHTML = html;
+            } else {
+              var name = this.storage.getItem("billing-name");
+              var email = this.storage.getItem("billing-email");
+              var city = this.storage.getItem("billing-city");
+              var address = this.storage.getItem("billing-address");
+              var zip = this.storage.getItem("billing-zip");
+              var country = this.storage.getItem("billing-country");
+
+              var sName = this.storage.getItem("shipping-name");
+              var sEmail = this.storage.getItem("shipping-email");
+              var sCity = this.storage.getItem("shipping-city");
+              var sAddress = this.storage.getItem("shipping-address");
+              var sZip = this.storage.getItem("shipping-zip");
+              var sCountry = this.storage.getItem("shipping-country");
+
+              var html = "<div class='detail'>";
+              html += "<h2>Billing</h2>";
+              html += "<ul>";
+              html += "<li>" + name + "</li>";
+              html += "<li>" + email + "</li>";
+              html += "<li>" + city + "</li>";
+              html += "<li>" + address + "</li>";
+              html += "<li>" + zip + "</li>";
+              html += "<li>" + country + "</li>";
+              html += "</ul></div>";
+
+              html += "<div class='detail right'>";
+              html += "<h2>Shipping</h2>";
+              html += "<ul>";
+              html += "<li>" + sName + "</li>";
+              html += "<li>" + sEmail + "</li>";
+              html += "<li>" + sCity + "</li>";
+              html += "<li>" + sAddress + "</li>";
+              html += "<li>" + sZip + "</li>";
+              html += "<li>" + sCountry + "</li>";
+              html += "</ul></div>";
+
+              this.$userDetails[0].innerHTML = html;
+            }
+          }
+        },
+
+        // Delete a product from the shopping cart
+
+        deleteProduct: function() {
+          var self = this;
+          if (self.$formCart.length) {
+            var cart = this._toJSONObject(this.storage.getItem(this.cartName));
+            var items = cart.items;
+
+            $(document).on("click", ".pdelete a", function(e) {
+              e.preventDefault();
+              var productName = $(this).data("product");
+              var newItems = [];
+              for (var i = 0; i < items.length; ++i) {
+                var item = items[i];
+                var product = item.product;
+                if (product == productName) {
+                  items.splice(i, 1);
+                }
+              }
+              newItems = items;
+              var updatedCart = {};
+              updatedCart.items = newItems;
+
+              var updatedTotal = 0;
+              var totalQty = 0;
+              if (newItems.length == 0) {
+                updatedTotal = 0;
+                totalQty = 0;
+              } else {
+                for (var j = 0; j < newItems.length; ++j) {
+                  var prod = newItems[j];
+                  var sub = prod.price * prod.qty;
+                  updatedTotal += sub;
+                  totalQty += prod.qty;
+                }
+              }
+
+              self.storage.setItem(
+                self.total,
+                self._convertNumber(updatedTotal)
+              );
+              self.storage.setItem(
+                self.shippingRates,
+                self._convertNumber(self._calculateShipping(totalQty))
+              );
+
+              self.storage.setItem(
+                self.cartName,
+                self._toJSONString(updatedCart)
+              );
+              $(this)
+                .parents("tr")
+                .remove();
+              self.$subTotal[0].innerHTML =
+                self.currency + " " + self.storage.getItem(self.total);
+            });
+          }
+        },
+
+        // Displays the shopping cart
+
+        displayCart: function() {
+          if (this.$formCart.length) {
+            var cart = this._toJSONObject(this.storage.getItem(this.cartName));
+            var items = cart.items;
+            var $tableCart = this.$formCart.find(".shopping-cart");
+            var $tableCartBody = $tableCart.find("tbody");
+
+            if (items.length == 0) {
+              $tableCartBody.html("");
+            } else {
+              for (var i = 0; i < items.length; ++i) {
+                var item = items[i];
+                var product = item.product;
+                var price = this.currency + " " + item.price;
+                var qty = item.qty;
+                var html =
+                  "<tr><td class='pname'>" +
+                  product +
+                  "</td>" +
+                  "<td class='pqty'><input type='text' value='" +
+                  qty +
+                  "' class='qty'/></td>";
+                html +=
+                  "<td class='pprice'>" +
+                  price +
+                  "</td><td class='pdelete'><a href='' data-product='" +
+                  product +
+                  "'>&times;</a></td></tr>";
+
+                $tableCartBody.html($tableCartBody.html() + html);
+              }
+            }
+
+            if (items.length == 0) {
+              this.$subTotal[0].innerHTML = this.currency + " " + 0.0;
+            } else {
+              var total = this.storage.getItem(this.total);
+              this.$subTotal[0].innerHTML = this.currency + " " + total;
+            }
+          } else if (this.$checkoutCart.length) {
+            var checkoutCart = this._toJSONObject(
+              this.storage.getItem(this.cartName)
+            );
+            var cartItems = checkoutCart.items;
+            var $cartBody = this.$checkoutCart.find("tbody");
+
+            if (cartItems.length > 0) {
+              for (var j = 0; j < cartItems.length; ++j) {
+                var cartItem = cartItems[j];
+                var cartProduct = cartItem.product;
+                var cartPrice = this.currency + " " + cartItem.price;
+                var cartQty = cartItem.qty;
+                var cartHTML =
+                  "<tr><td class='pname'>" +
+                  cartProduct +
+                  "</td>" +
+                  "<td class='pqty'>" +
+                  cartQty +
+                  "</td>" +
+                  "<td class='pprice'>" +
+                  cartPrice +
+                  "</td></tr>";
+
+                $cartBody.html($cartBody.html() + cartHTML);
+              }
+            } else {
+              $cartBody.html("");
+            }
+
+            if (cartItems.length > 0) {
+              var cartTotal = this.storage.getItem(this.total);
+              var cartShipping = this.storage.getItem(this.shippingRates);
+              var subTot =
+                this._convertString(cartTotal) +
+                this._convertString(cartShipping);
+
+              this.$subTotal[0].innerHTML =
+                this.currency + " " + this._convertNumber(subTot);
+              this.$shipping[0].innerHTML = this.currency + " " + cartShipping;
+            } else {
+              this.$subTotal[0].innerHTML = this.currency + " " + 0.0;
+              this.$shipping[0].innerHTML = this.currency + " " + 0.0;
+            }
+          }
+        },
+
+        // Empties the cart by calling the _emptyCart() method
+        // @see $.Shop._emptyCart()
+
+        emptyCart: function() {
+          var self = this;
+          if (self.$emptyCartBtn.length) {
+            self.$emptyCartBtn.on("click", function() {
+              self._emptyCart();
+            });
+          }
+        },
+
+        // Updates the cart
+
+        updateCart: function() {
+          var self = this;
+          if (self.$updateCartBtn.length) {
+            self.$updateCartBtn.on("click", function() {
+              var $rows = self.$formCart.find("tbody tr");
+              var cart = self.storage.getItem(self.cartName);
+              var shippingRates = self.storage.getItem(self.shippingRates);
+              var total = self.storage.getItem(self.total);
+
+              var updatedTotal = 0;
+              var totalQty = 0;
+              var updatedCart = {};
+              updatedCart.items = [];
+
+              $rows.each(function() {
+                var $row = $(this);
+                var pname = $.trim($row.find(".pname").text());
+                var pqty = self._convertString($row.find(".pqty > .qty").val());
+                var pprice = self._convertString(
+                  self._extractPrice($row.find(".pprice"))
+                );
+
+                var cartObj = {
+                  product: pname,
+                  price: pprice,
+                  qty: pqty
+                };
+
+                updatedCart.items.push(cartObj);
+
+                var subTotal = pqty * pprice;
+                updatedTotal += subTotal;
+                totalQty += pqty;
+              });
+
+              self.storage.setItem(
+                self.total,
+                self._convertNumber(updatedTotal)
+              );
+              self.storage.setItem(
+                self.shippingRates,
+                self._convertNumber(self._calculateShipping(totalQty))
+              );
+              self.storage.setItem(
+                self.cartName,
+                self._toJSONString(updatedCart)
+              );
+            });
+          }
+        },
+
+        // Adds items to the shopping cart
+
+        handleAddToCartForm: function() {
+          var self = this;
+          self.$formAddToCart.each(function() {
+            var $form = $(this);
+            var $product = $form.parent();
+            var price = self._convertString($product.data("price"));
+            var name = $product.data("name");
+
+            $form.on("submit", function() {
+              var qty = self._convertString($form.find(".qty").val());
+              var subTotal = qty * price;
+              var total = self._convertString(self.storage.getItem(self.total));
+              var sTotal = total + subTotal;
+              self.storage.setItem(self.total, sTotal);
+              self._addToCart({
+                product: name,
+                price: price,
+                qty: qty
+              });
+              var shipping = self._convertString(
+                self.storage.getItem(self.shippingRates)
+              );
+              var shippingRates = self._calculateShipping(qty);
+              var totalShipping = shipping + shippingRates;
+
+              self.storage.setItem(self.shippingRates, totalShipping);
+            });
+          });
+        },
+
+        // Handles the checkout form by adding a validation routine and saving user's info into the session storage
+
+        handleCheckoutOrderForm: function() {
+          var self = this;
+          if (self.$checkoutOrderForm.length) {
+            var $sameAsBilling = $("#same-as-billing");
+            $sameAsBilling.on("change", function() {
+              var $check = $(this);
+              if ($check.prop("checked")) {
+                $("#fieldset-shipping").slideUp("normal");
+              } else {
+                $("#fieldset-shipping").slideDown("normal");
+              }
+            });
+
+            self.$checkoutOrderForm.on("submit", function() {
+              var $form = $(this);
+              var valid = self._validateForm($form);
+
+              if (!valid) {
+                return valid;
+              } else {
+                self._saveFormData($form);
+              }
+            });
+          }
+        },
+
+        // Private methods
+
+        // Empties the session storage
+
+        _emptyCart: function() {
+          this.storage.clear();
+        },
+
+        /* Format a number by decimal places
+         * @param num Number the number to be formatted
+         * @param places Number the decimal places
+         * @returns n Number the formatted number
+         */
+
+        _formatNumber: function(num, places) {
+          var n = num.toFixed(places);
+          return n;
+        },
+
+        /* Extract the numeric portion from a string
+         * @param element Object the jQuery element that contains the relevant string
+         * @returns price String the numeric string
+         */
+
+        _extractPrice: function(element) {
+          var self = this;
+          var text = element.text();
+          var price = text.replace(self.currencyString, "").replace(" ", "");
+          return price;
+        },
+
+        /* Converts a numeric string into a number
+         * @param numStr String the numeric string to be converted
+         * @returns num Number the number
+         */
+
+        _convertString: function(numStr) {
+          var num;
+          if (/^[-+]?[0-9]+\.[0-9]+$/.test(numStr)) {
+            num = parseFloat(numStr);
+          } else if (/^\d+$/.test(numStr)) {
+            num = parseInt(numStr, 10);
+          } else {
+            num = Number(numStr);
+          }
+
+          if (!isNaN(num)) {
+            return num;
+          } else {
+            console.warn(numStr + " cannot be converted into a number");
+            return false;
+          }
+        },
+
+        /* Converts a number to a string
+         * @param n Number the number to be converted
+         * @returns str String the string returned
+         */
+
+        _convertNumber: function(n) {
+          var str = n.toString();
+          return str;
+        },
+
+        /* Converts a JSON string to a JavaScript object
+         * @param str String the JSON string
+         * @returns obj Object the JavaScript object
+         */
+
+        _toJSONObject: function(str) {
+          var obj = JSON.parse(str);
+          return obj;
+        },
+
+        /* Converts a JavaScript object to a JSON string
+         * @param obj Object the JavaScript object
+         * @returns str String the JSON string
+         */
+
+        _toJSONString: function(obj) {
+          var str = JSON.stringify(obj);
+          return str;
+        },
+
+        /* Add an object to the cart as a JSON string
+         * @param values Object the object to be added to the cart
+         * @returns void
+         */
+
+        _addToCart: function(values) {
+          var cart = this.storage.getItem(this.cartName);
+
+          var cartObject = this._toJSONObject(cart);
+          var cartCopy = cartObject;
+          var items = cartCopy.items;
+          items.push(values);
+
+          this.storage.setItem(this.cartName, this._toJSONString(cartCopy));
+        },
+
+        /* Custom shipping rates calculation based on the total quantity of items in the cart
+         * @param qty Number the total quantity of items
+         * @returns shipping Number the shipping rates
+         */
+
+        _calculateShipping: function(qty) {
+          var shipping = 0;
+          if (qty >= 6) {
+            shipping = 10;
+          }
+          if (qty >= 12 && qty <= 30) {
+            shipping = 20;
+          }
+
+          if (qty >= 30 && qty <= 60) {
+            shipping = 30;
+          }
+
+          if (qty > 60) {
+            shipping = 0;
+          }
+
+          return shipping;
+        },
+
+        /* Validates the checkout form
+         * @param form Object the jQuery element of the checkout form
+         * @returns valid Boolean true for success, false for failure
+         */
+
+        _validateForm: function(form) {
+          var self = this;
+          var fields = self.requiredFields;
+          var $visibleSet = form.find("fieldset:visible");
+          var valid = true;
+
+          form.find(".message").remove();
+
+          $visibleSet.each(function() {
+            $(this)
+              .find(":input")
+              .each(function() {
+                var $input = $(this);
+                var type = $input.data("type");
+                var msg = $input.data("message");
+
+                if (type == "string") {
+                  if ($input.val() == fields.str.value) {
+                    $("<span class='message'/>")
+                      .text(msg)
+                      .insertBefore($input);
+
+                    valid = false;
+                  }
+                } else {
+                  if (!fields.expression.value.test($input.val())) {
+                    $("<span class='message'/>")
+                      .text(msg)
+                      .insertBefore($input);
+
+                    valid = false;
+                  }
+                }
+              });
+          });
+
+          return valid;
+        },
+
+        /* Save the data entered by the user in the ckeckout form
+         * @param form Object the jQuery element of the checkout form
+         * @returns void
+         */
+
+        _saveFormData: function(form) {
+          var self = this;
+          var $visibleSet = form.find("fieldset:visible");
+
+          $visibleSet.each(function() {
+            var $set = $(this);
+            if ($set.is("#fieldset-billing")) {
+              var name = $("#name", $set).val();
+              var email = $("#email", $set).val();
+              var city = $("#city", $set).val();
+              var address = $("#address", $set).val();
+              var zip = $("#zip", $set).val();
+              var country = $("#country", $set).val();
+
+              self.storage.setItem("billing-name", name);
+              self.storage.setItem("billing-email", email);
+              self.storage.setItem("billing-city", city);
+              self.storage.setItem("billing-address", address);
+              self.storage.setItem("billing-zip", zip);
+              self.storage.setItem("billing-country", country);
+            } else {
+              var sName = $("#sname", $set).val();
+              var sEmail = $("#semail", $set).val();
+              var sCity = $("#scity", $set).val();
+              var sAddress = $("#saddress", $set).val();
+              var sZip = $("#szip", $set).val();
+              var sCountry = $("#scountry", $set).val();
+
+              self.storage.setItem("shipping-name", sName);
+              self.storage.setItem("shipping-email", sEmail);
+              self.storage.setItem("shipping-city", sCity);
+              self.storage.setItem("shipping-address", sAddress);
+              self.storage.setItem("shipping-zip", sZip);
+              self.storage.setItem("shipping-country", sCountry);
+            }
+          });
+        }
+      };
+
+      $(function() {
+        var shop = new $.Shop("#site");
+      });
+    })(jQuery);
+  </script>
+</html>

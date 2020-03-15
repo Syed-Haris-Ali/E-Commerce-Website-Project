@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registeration Form</title>
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+      media="screen"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script type="text/javascript" src="js/jquery.shop.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"
+    ></script>
+    <script>
+      function java() {
+        var username = document.getElementById("uname");
+        var password = document.getElementById("pass");
+
+        if (username.value.trim() == "" || password.value.trim() == "") {
+          alert("No blank values allowed");
+          return false;
+        } else {
+          true;
+        }
+      }
+    </script>
+
+    <style>
+      body {
+        background-image: url(photos/login4.jpg);
+        height: 800px;
+        background-size: cover;
+        background-position: center;
+      }
+      .login-page {
+        width: 360px;
+        padding: 10% 0 0;
+        margin: auto;
+      }
+      .form {
+        position: relative;
+        z-index: 1;
+        background: rgba(255, 226, 173, 0.8);
+        max-width: 360px;
+        padding: 45px;
+        text-align: center;
+      }
+      .form input {
+        font-family: "Roboto", sans-serif;
+        outline: 1;
+        background: whitesmoke;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+      .form button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: orange;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .form button:hover,
+      .form button:active {
+        background: rgb(224, 146, 0);
+      }
+      .form .lgn a {
+        color: red;
+        text-decoration: none;
+      }
+      .register-form .lgn a:hover {
+        color: blue;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="form">
+        <form
+          class="register-form"
+          id="form"
+          onsubmit="return java()"
+          action="index.html"
+          method="GET"
+        >
+          <input type="text" id="uname" placeholder="User Name" required />
+          <input type="password" id="pass" placeholder="Password" required />
+          <input type="email" placeholder="Email id" required />
+          <button type="submit">Create</button>
+          <p class="lgn">Already Registered?<a href="login.html">Login</a></p>
+          <p class="back"><a href="index.html">Back</a></p>
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    var removeCartItemButton = document.getElementsByClassName("btn-danger");
+    console.log(removeCartItemButton);
+    for (var i = 0; i < removeCartItemButton.length; i++) {
+      var button = removeCartItemButton[i];
+      button.addEventListener("clicked", function(event) {
+        var buttonClicked = event.target;
+        buttonClicked.parentElement.parentElement.remove();
+      });
+      console.log("clicked");
+    }
+  </script>
+</html>
